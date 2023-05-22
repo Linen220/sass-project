@@ -1,6 +1,6 @@
 .perfil {
 	width: 50%;
-	padding-top: 50px;
+	padding: 50px 0;
 	color: $color-claro;
 	background-color: $color-secundario;
 	&__avatar {
@@ -9,29 +9,33 @@
 		border-radius: 50em;
 	}
 	&__nombre {
-		text-transform: uppercase;
 		text-align: center;
+		// SE QUITA EL FONTSIZE, PORQUE EL LOOP EACH ESTA
+		// COLOCANDO VALORES A LAS ETIQUETAS h1, h2 y h3
 		font-size: 20px;
-		font-family: $fuente2;
+		@include titulos($fuente2);
 	}
 	&__titulo {
 		text-transform: uppercase;
 		text-align: center;
 		font-weight: 700;
 		font-size: 12px;
+		color: get-opacity($color-claro,.5);
 	}
 	&__boton {
-		display: block;
+		display: flex;
 		width: 100px;
 		height: 40px;
 		margin: 15px auto;
-		padding-top: 15px;
 		border-radius: 20px;
 		text-decoration: none;
-		text-transform: uppercase;
 		text-align: center;
-		font-family: $fuente2;
+		align-items: center;
+		justify-content: center;
 		color: $color-claro;
+		background-color: get-opacity($color-primario,.2);
+		border: 2px solid get-opacity($color-claro,.3);
+		@include titulos($fuente2);
 	}
 }
 
