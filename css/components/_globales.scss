@@ -1,19 +1,42 @@
 // Variables
-$fuente1: 'Lato', sans-serif;
-$fuente2: 'Oswald', sans-serif;
+$dark-theme: true;
+// $dark-theme: false;
 
-$color-claro: #ffffff;
+$color-texto: #333333;
+$color-subtitulo: #ffffff;
+$color-titulo: #ffffff;
 $color-fondo: #ffffff;
+$color-fondo-perfil: #8841DA;
+$color-fondo-caja: #ffffff;
 $color-primario: #333333;
 $color-secundario: #8841DA;
 $colo-variacion: #3f579a;
+
+@if $dark-theme {
+	$color-texto: #ffffff;
+	$color-subtitulo: #3f579a;
+	$color-titulo: #8841DA;
+	$color-fondo: #333333;
+	$color-fondo-perfil: #ffffff;
+	$color-fondo-caja: #ffffff;
+	$color-primario: #333333;
+	$color-secundario: #8841DA;
+	$colo-variacion: #3f579a;
+}
+
+
+// @include theme($dark-theme);
+$fuente1: 'Lato', sans-serif;
+$fuente2: 'Oswald', sans-serif;
+
+
 
 // REUSAR CÓDIGO
 @mixin caja {
 	border-radius: 20px;
 	box-shadow: 0 20px 33px 0 rgba(0,0,0,0.5);
 	color: $color-primario;
-	background-color: $color-claro;
+	background-color: $color-fondo-caja;
 }
 
 @mixin titulos($fuente){
@@ -25,6 +48,9 @@ $colo-variacion: #3f579a;
 
 // FUNCIONES
 @function get-opacity($color, $nivel) {
+	@if $dark-theme {
+		$nivel: 1;
+	}
 	@return rgba($color, $nivel);
 }
 
@@ -36,6 +62,7 @@ $colo-variacion: #3f579a;
 	}
 }
 
+// STYLE GENERAL
 * {
 	box-sizing: border-box;
 }
@@ -49,4 +76,5 @@ main {
 	display: flex;
 	width: 100%;
 	height: 100%;
+	background-color: $color-fondo;
 }

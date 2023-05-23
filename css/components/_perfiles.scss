@@ -1,8 +1,8 @@
 .perfil {
 	width: 50%;
 	padding: 50px 0;
-	color: $color-claro;
-	background-color: $color-secundario;
+	color: $color-subtitulo;
+	background-color: $color-fondo-perfil;
 	&__avatar {
 		display: block;
 		margin: 0 auto;
@@ -13,6 +13,7 @@
 		// SE QUITA EL FONTSIZE, PORQUE EL LOOP EACH ESTA
 		// COLOCANDO VALORES A LAS ETIQUETAS h1, h2 y h3
 		font-size: 20px;
+		color: $color-titulo;
 		@include titulos($fuente2);
 	}
 	&__titulo {
@@ -20,7 +21,7 @@
 		text-align: center;
 		font-weight: 700;
 		font-size: 12px;
-		color: get-opacity($color-claro,.5);
+		color: get-opacity($color-subtitulo,.5);
 	}
 	&__boton {
 		display: flex;
@@ -32,9 +33,9 @@
 		text-align: center;
 		align-items: center;
 		justify-content: center;
-		color: $color-claro;
+		color: $color-fondo-caja;
 		background-color: get-opacity($color-primario,.2);
-		border: 2px solid get-opacity($color-claro,.3);
+		border: 2px solid get-opacity($color-fondo-caja,.3);
 		@include titulos($fuente2);
 	}
 }
